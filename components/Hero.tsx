@@ -1,19 +1,35 @@
 "use client";
 
-import { useState } from "react";
-import { TrendingUp, TrendingDown, BarChart2 } from "lucide-react";
+import { useState, useRef } from "react";
+import { TrendingUp, TrendingDown, BarChart3 } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+const Word = ({ children, progress, range }: { children: React.ReactNode, progress: any, range: [number, number] }) => {
+    const color = useTransform(progress, range, ["#D4D4D4", "#323232"]);
+    return <motion.span style={{ color }}>{children}</motion.span>;
+};
 
 
 
 export default function Hero() {
+    // State to track which dashboard image is currently in the front (0 = Sales, 1 = Churn, 2 = Views)
     const [frontIndex, setFrontIndex] = useState(0);
 
+    const testimonialRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: testimonialRef,
+        offset: ["0 0.9", "1 0.7"]
+    });
+
+    // The sequential array of dashboard images rendered in overlapping layers
     const images = [
+        "/dashboard.png",
         "/Dashboard_Convert.png",
-        "/Dashboard_zello.png",
-        "/dashboard.png"
+        "/Dashboard_zello.png"
     ];
 
+    // Helper function to dynamically determine absolute positioning, shadow depth, and z-index.
+    // This creates a 3D staggered layout where the focused index is placed at the front.
     const getLayerClasses = (index: number) => {
         if (index === frontIndex) {
             // Front
@@ -42,10 +58,11 @@ export default function Hero() {
                 </div>
 
                 {/* Action Buttons */}
+                {/* Secondary wrap displaying primary call-to-action buttons (Get started / See Pricing) with complex inset shadows */}
                 <div className="relative mt-8 mb-10 flex h-[40px] w-[250.422px] flex-row items-center justify-center gap-[15px] m-0 p-0 mx-auto">
-                    <button className="flex h-full w-[117.5px] items-center justify-center rounded-[12px] bg-[#108B4E] text-[16px] font-normal leading-[17.6px] tracking-[-0.64px] text-white transition-colors hover:bg-[#18A668] font-[family-name:var(--font-instrument-sans)]"
+                    <button className="flex h-full w-[117.5px] items-center justify-center rounded-[12px] bg-[#14A15A] text-[16px] font-normal leading-[17.6px] tracking-[-0.64px] text-white transition-colors hover:bg-[#1CCB73] font-[family-name:var(--font-instrument-sans)]"
                         style={{
-                            boxShadow: "rgba(0, 0, 0, 0.15) 0px -0.796192px 1.43315px -0.75px inset, rgba(0, 0, 0, 0.145) 0px -2.41451px 4.34611px -1.5px inset, rgba(0, 0, 0, 0.133) 0px -6.38265px 11.4888px -2.25px inset, rgba(0, 0, 0, 0.1) 0px -20px 36px -3px inset"
+                            boxShadow: "rgba(0, 0, 0, 0.08) 0px -0.796192px 1.43315px -0.75px inset, rgba(0, 0, 0, 0.07) 0px -2.41451px 4.34611px -1.5px inset, rgba(0, 0, 0, 0.06) 0px -6.38265px 11.4888px -2.25px inset, rgba(0, 0, 0, 0.04) 0px -20px 36px -3px inset"
                         }}>
                         Get started
                     </button>
@@ -58,7 +75,7 @@ export default function Hero() {
                 </div>
 
                 {/* Dashboard Mockup Showcase */}
-                <div className="relative mt-20 flex h-[756px] w-full max-w-[1200px] flex-col cursor-pointer">
+                <div className="relative mt-20 -mb-[100px] flex h-[756px] w-full max-w-[1200px] flex-col cursor-pointer justify-end">
                     {/* Ambient Shadow glow */}
                     <div className="absolute top-0 left-1/2 -z-10 h-full w-4/5 -translate-x-1/2 bg-gray-200/50 blur-[100px]" />
 
@@ -71,32 +88,88 @@ export default function Hero() {
                             <img src={src} alt={`Dashboard Layer ${index + 1}`} className="h-full w-full rounded-[10px] ring-1 ring-black/10 object-cover object-top shadow-sm" />
                         </div>
                     ))}
-
-                    {/* Overlay Floating Buttons specifically for the main dashboard (index 0) */}
-                    <div className={`absolute bottom-[16%] left-1/2 -translate-x-1/2 z-50 flex items-center gap-[6px] rounded-[14px] bg-[#E8E8E8]/80 p-[6px] shadow-[0_8px_16px_rgba(0,0,0,0.1)] ring-4 ring-white backdrop-blur-md transition-all duration-500 ${frontIndex === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-                        <button className="flex items-center gap-[6px] rounded-[10px] bg-white px-3 py-[6px] text-[13px] font-medium text-[#333333] shadow-sm ring-1 ring-black/5 transition-all hover:bg-gray-50">
-                            <TrendingUp className="h-[14px] w-[14px] text-[#108B4E]" />
-                            Sales
-                        </button>
-                        <button className="flex items-center gap-[6px] rounded-[10px] bg-white px-3 py-[6px] text-[13px] font-medium text-[#666666] shadow-sm ring-1 ring-black/5 transition-all hover:bg-gray-50">
-                            <TrendingDown className="h-[14px] w-[14px] text-[#24D164]" />
-                            Churn
-                        </button>
-                        <button className="flex items-center gap-[6px] rounded-[10px] bg-white px-3 py-[6px] text-[13px] font-medium text-[#666666] shadow-sm ring-1 ring-black/5 transition-all hover:bg-gray-50">
-                            <BarChart2 className="h-[14px] w-[14px] text-gray-400" />
-                            Views
-                        </button>
-                    </div>
-
-                    {/* Dashboard Fade to Testimonial */}
-                    <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[#F9FAFB] z-40 pointer-events-none" />
                 </div>
 
-                {/* Testimonial Section */}
-                <div className="w-[calc(100%+40px)] -mx-[20px] bg-[#F9FAFB] py-24 flex flex-col items-center justify-center font-[family-name:var(--font-instrument-sans)] relative z-50">
-                    <div className="max-w-[1000px] mx-auto text-center px-4 flex flex-col items-center">
-                        {/* Testimonial content removed as requested */}
-                    </div>
+                {/* Tab Navigation Menu */}
+                {/* A frosted glass (glassmorphism) navigation bar mapping tab selections to their corresponding dashboard view slices */}
+                <div
+                    className={`absolute bottom-[5px] left-1/2 -translate-x-1/2 z-50 flex h-[52.7969px] w-[255.344px] items-center gap-[6px] p-[8px] transition-all duration-500 rounded-[16px] opacity-100 scale-100`}
+                    style={{
+                        backgroundColor: "rgba(153, 153, 153, 0.6)",
+                        boxShadow: "rgba(0, 0, 0, 0.157) 0.301094px 0.301094px 1.78841px -1.08333px, rgba(0, 0, 0, 0.145) 1.14427px 1.14427px 6.7966px -2.16667px, rgba(0, 0, 0, 0.086) 5px 5px 29.6985px -3.25px",
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                    }}
+                >
+                    <button
+                        onClick={() => setFrontIndex(0)}
+                        className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 0 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                        <TrendingUp className={`h-[14px] w-[14px] transition-colors ${frontIndex === 0 ? 'text-[#108B4E]' : 'text-[#666666]'}`} />
+                        Sales
+                    </button>
+                    <button
+                        onClick={() => setFrontIndex(1)}
+                        className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 1 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                        <TrendingDown className={`h-[14px] w-[14px] transition-colors ${frontIndex === 1 ? 'text-[#108B4E]' : 'text-[#666666]'}`} />
+                        Churn
+                    </button>
+                    <button
+                        onClick={() => setFrontIndex(2)}
+                        className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 2 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                        {/* Custom hand-coded SVG recreating the 'Views' bar-chart icon with thick rounded caps */}
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={`transition-colors ${frontIndex === 2 ? 'text-[#108B4E]' : 'text-[#666666]'}`}
+                            style={{ display: 'inline', verticalAlign: 'baseline', overflow: 'visible', backgroundColor: 'transparent' }}
+                        >
+                            <rect x="1" y="8" width="3" height="5" rx="1.5" />
+                            <rect x="5.5" y="4" width="3" height="9" rx="1.5" />
+                            <rect x="10" y="0" width="3" height="13" rx="1.5" />
+                        </svg>
+                        Views
+                    </button>
+                </div>
+            </div>
+
+            {/* Testimonial Section */}
+            <div className="mx-auto mt-20 flex h-[246px] w-full max-w-[1120px] flex-col items-start justify-center px-[100px] font-[family-name:var(--font-instrument-sans)]">
+                <blockquote ref={testimonialRef} className="text-[40px] font-medium italic leading-[52px] tracking-[-2px]">
+                    {[
+                        "\"Compound's AI uncovered $2.8M in hidden annual",
+                        "revenue we'd been missing - their predictive",
+                        "abandoned cart system alone boosted our bottom line",
+                        "by 31% in 90 days.\""
+                    ].map((line, lineIndex, linesArray) => {
+                        const wordsInLine = line.split(" ");
+                        let currentWordIndex = linesArray.slice(0, lineIndex).reduce((acc, l) => acc + l.split(" ").length, 0);
+
+                        return (
+                            <span key={lineIndex}>
+                                {wordsInLine.map((word, wIndex) => {
+                                    const stepIndex = currentWordIndex + wIndex;
+                                    const start = stepIndex / 27;
+                                    const end = (stepIndex + 1) / 27;
+                                    return (
+                                        <span key={wIndex}>
+                                            <Word progress={scrollYProgress} range={[start, end]}>
+                                                {word}
+                                            </Word>
+                                            {wIndex < wordsInLine.length - 1 && " "}
+                                        </span>
+                                    );
+                                })}
+                                {lineIndex < linesArray.length - 1 && <br className="hidden sm:block" />}
+                                {lineIndex < linesArray.length - 1 && <span className="sm:hidden">{" "}</span>}
+                            </span>
+                        );
+                    })}
+                </blockquote>
+                <div className="mt-5 text-[15px] sm:text-[16px] tracking-[-0.01em] text-[#151515]">
+                    <span className="font-semibold">Jamie Rivera</span>, CEO of Luxe Threads
                 </div>
             </div>
         </div>
