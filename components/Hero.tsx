@@ -168,7 +168,7 @@ export default function Hero() {
                         );
                     })}
                 </blockquote>
-                <div className="mt-5 text-[15px] sm:text-[16px] tracking-[-0.01em] text-[#151515]">
+                <div className="mt-[20px] font-[family-name:var(--font-instrument-sans)] text-[20px] font-normal tracking-[-0.16px] leading-[24px] text-[rgb(21,21,21)] text-left">
                     <span className="font-semibold">Jamie Rivera</span>, CEO of Luxe Threads
                 </div>
             </div>
