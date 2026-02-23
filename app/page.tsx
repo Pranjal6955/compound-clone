@@ -3,6 +3,9 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import UseCases from "@/components/useCases";
 import Pricing from "@/components/Pricing";
+import Testimonial from "@/components/Testimonial";
+import FAQS from "@/components/FAQS";
+import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
       <Features />
       <UseCases />
       <Pricing />
+      <Testimonial />
+      <CTA />
+      <FAQS />
     </div>
   );
 }
