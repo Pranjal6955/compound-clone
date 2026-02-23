@@ -53,7 +53,7 @@ const comparisonData = {
 
 export default function Features() {
     return (
-        <section className="py-24 px-6 lg:px-0 w-full max-w-[1120px] mx-auto">
+        <section className="pt-24 pb-30 px-6 lg:px-0 w-full max-w-[1120px] mx-auto">
             <div className="mb-16">
                 <h2 className="font-[family-name:var(--font-instrument-sans)] text-[44px] font-medium tracking-tight leading-tight text-[#323232] text-left mb-4">
                     Product Features
@@ -106,7 +106,7 @@ export default function Features() {
             </div>
 
             {/* Comparison Section */}
-            <div className="mt-24 w-full pb-24">
+            <div className="mt-24 w-full pb-8">
                 <div className="text-left mb-16">
                     <h2 className="font-[family-name:var(--font-instrument-sans)] text-[44px] font-medium tracking-[-2.2px] leading-[52.8px] text-[#323232] text-left mb-4">
                         Traditional analytics tools <span className="text-[#009245]">don&apos;t cut it any more</span>
@@ -116,36 +116,36 @@ export default function Features() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-[95px] items-start max-w-[1120px] mx-auto">
+                <div className="relative flex flex-row w-[1120px] h-[518.44px] m-0 p-0 box-border gap-[32px]">
                     {/* Traditional Analytics Platforms */}
-                    <div className="relative flex flex-col p-8 rounded-[16px] overflow-hidden w-full lg:w-[512.5px] lg:h-[502.17px]">
-                        <h3 className="font-[family-name:var(--font-instrument-sans)] text-[24px] font-normal tracking-[-1.2px] leading-[26.4px] text-[#151515] text-left whitespace-pre-wrap max-w-[480px] mb-8">
+                    <div className="relative flex flex-col p-8 rounded-[16px] overflow-hidden w-full lg:w-[544px] lg:h-[518.44px] box-border">
+                        <h3 className="font-[family-name:var(--font-instrument-sans)] text-[24px] font-normal tracking-[-1.2px] leading-[26.4px] text-[rgb(16,16,16)] text-left whitespace-pre-wrap max-w-[480px] mb-8">
                             Traditional Analytics Platforms
                         </h3>
-                        <ul className="relative flex flex-col gap-3 w-full max-w-[480px] overflow-hidden">
+                        <ul className="relative flex flex-col gap-3 w-[480px] h-[396px] overflow-hidden m-0 p-0 box-border">
                             {comparisonData.traditional.map((item, i) => (
-                                <li key={i} className="flex items-center gap-4 text-[#101010] font-[family-name:var(--font-instrument-sans)] text-[18px] font-normal tracking-[-0.72px] leading-[25.2px] whitespace-pre-wrap">
-                                    <div className="w-[20px] h-[20px] rounded-full border border-[#101010] shrink-0" />
-                                    <span className="max-w-[448px]">{item}</span>
+                                <li key={i} className="flex items-center gap-4 text-[rgb(16,16,16)] font-[family-name:var(--font-instrument-sans)] text-[18px] font-normal tracking-[-0.72px] leading-[25.2px] whitespace-pre-wrap">
+                                    <div className="w-[20px] h-[20px] rounded-full border border-gray-400 shrink-0" />
+                                    <span className="w-[444px]">{item}</span>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
                     {/* Compound */}
-                    <div className="relative flex flex-col bg-white rounded-[16px] p-8 overflow-hidden w-full lg:w-[512.5px] lg:h-[502.17px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.03]">
-                        <h3 className="font-[family-name:var(--font-instrument-sans)] text-[24px] font-medium text-[#323232] mb-8">
+                    <div className="relative flex flex-col bg-white rounded-[16px] p-8 overflow-hidden w-full lg:w-[544px] lg:h-[518.44px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.03] box-border">
+                        <h3 className="font-[family-name:var(--font-instrument-sans)] text-[24px] font-medium text-[rgb(16,16,16)] mb-8">
                             Compound
                         </h3>
-                        <ul className="relative flex flex-col gap-4 w-full max-w-[480px] overflow-hidden">
+                        <ul className="relative flex flex-col gap-3 w-[480px] h-[396px] overflow-hidden m-0 p-0 box-border">
                             {comparisonData.compound.map((item, i) => (
-                                <li key={i} className="flex items-center gap-4 text-[#101010] font-[family-name:var(--font-instrument-sans)] text-[18px] font-normal tracking-[-0.72px] leading-[25.2px] whitespace-pre-wrap">
+                                <li key={i} className="flex items-center gap-4 text-[rgb(16,16,16)] font-[family-name:var(--font-instrument-sans)] text-[18px] font-normal tracking-[-0.72px] leading-[25.2px] whitespace-pre-wrap">
                                     <div className="w-[20px] h-[20px] rounded-full bg-[rgba(31,181,103,0.25)] border border-[#009245]/30 flex items-center justify-center shrink-0">
                                         <svg width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#009245" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </div>
-                                    <span className="max-w-[448px]">{item}</span>
+                                    <span className="w-[444px]">{item}</span>
                                 </li>
                             ))}
                         </ul>
