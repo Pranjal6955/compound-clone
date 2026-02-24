@@ -9,10 +9,17 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     // navigation items
-    const navItems = ["Features", "Use cases", "Pricing", "Reviews", "FAQs"];
+    // navigation items with their corresponding section IDs
+    const navItems = [
+        { label: "Features", href: "#features" },
+        { label: "Use cases", href: "#use-cases" },
+        { label: "Pricing", href: "#pricing" },
+        { label: "Reviews", href: "#reviews" },
+        { label: "FAQs", href: "#faq" },
+    ];
 
     return (
-        <header className="absolute top-0 left-0 right-0 z-50 w-full bg-transparent pt-2 px-4 font-sans antialiased">
+        <header className="fixed top-0 left-0 right-0 z-50 w-full bg-transparent pt-2 px-4 font-sans antialiased">
             <div className="mx-auto flex h-[56px] w-full max-w-[606px] items-center justify-between rounded-[18px] bg-[#323232] pl-2 pr-2 shadow-sm">
 
                 {/* Left: Logo */}
@@ -28,11 +35,11 @@ export default function Navbar() {
                 <nav className="hidden items-center gap-1 md:flex">
                     {navItems.map((item) => (
                         <Link
-                            key={item}
-                            href={`#${item.toLowerCase().replace(" ", "-")}`}
+                            key={item.label}
+                            href={item.href}
                             className="rounded-[10px] px-3 py-2 text-[16px] font-light leading-[17.6px] tracking-[-0.64px] text-[#FFFFFF] font-[family-name:var(--font-instrument-sans)] transition-all hover:bg-white/10"
                         >
-                            {item}
+                            {item.label}
                         </Link>
                     ))}
                 </nav>
@@ -73,12 +80,12 @@ export default function Navbar() {
                     <div className="space-y-2">
                         {navItems.map((item) => (
                             <Link
-                                key={item}
-                                href={`#${item.toLowerCase().replace(" ", "-")}`}
+                                key={item.label}
+                                href={item.href}
                                 className="block rounded-[14px] px-4 py-3 text-[16px] font-normal leading-[17.6px] tracking-[-0.64px] text-[#FFFFFF] font-[family-name:var(--font-instrument-sans)] hover:bg-white/10 hover:text-white transition-colors"
                                 onClick={() => setIsOpen(false)}
                             >
-                                {item}
+                                {item.label}
                             </Link>
                         ))}
                         <div className="pt-2 pb-1 px-1">

@@ -5,7 +5,7 @@ import { Star, Play, Github, Settings, Smile, Infinity, Hexagon } from "lucide-r
 
 export default function CTA() {
     return (
-        <section className="pb-8 pt-8 px-4 lg:px-0 w-full flex justify-center">
+        <section className="pb-2 pt-8 px-4 lg:px-0 w-full flex justify-center">
             {/* Main CTA Card */}
             <div
                 className="w-full max-w-[1400px] lg:h-[550.844px] bg-[rgb(255,251,245)] rounded-[40px] flex flex-col lg:flex-row items-center justify-between p-8 lg:p-[80px] gap-12 lg:gap-16 lg:mx-auto"

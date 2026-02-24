@@ -25,7 +25,7 @@ const PricingCard = ({ plan, index }: { plan: any; index: number }) => {
             }}
         >
             <div className={`relative w-full overflow-hidden flex flex-col ${plan.hasToggle ? "h-[75px]" : "h-auto"}`}>
-                <div className="flex justify-between items-start mb-2">
+                <div className="flex justify-between items-start">
                     <strong className="text-[12px] font-semibold text-[#108B4E] tracking-[-0.48px] leading-[14.4px] font-[family-name:var(--font-instrument-sans)] uppercase">
                         {plan.name}
                     </strong>
@@ -95,7 +95,8 @@ const PricingCard = ({ plan, index }: { plan: any; index: number }) => {
                             )}
                         </div>
                         <span
-                            className={`text-[13px] ${feature.included ? "text-[#404040]" : "text-[#A3A3A3]"}`}
+                            className={`text-[18px] font-normal tracking-[-0.04em] leading-[1.4em] text-left ${feature.included ? "text-[#101010]" : "text-[#A3A3A3]"}`}
+                            style={{ fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif' }}
                         >
                             {feature.text}
                         </span>

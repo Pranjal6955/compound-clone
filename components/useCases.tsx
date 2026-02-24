@@ -4,93 +4,60 @@ import { useState } from "react";
 
 const tabs = ["Cart Rescue", "CLV Maximizer", "Deadstock AI", "Smart Pricing"];
 
-interface TabContent {
-    leftTitle: React.ReactNode;
-    leftDescription: string;
-    rightTitle: React.ReactNode;
-    rightDescription: string;
+interface FeatureCard {
+    title: React.ReactNode;
+    description: string;
+    image: string;
 }
 
-const tabContents: TabContent[] = [
+const featureCards: FeatureCard[] = [
     {
-        leftTitle: (
+        title: (
             <>
                 Turn abandoned carts
                 <br />
                 into instant revenue
             </>
         ),
-        leftDescription:
+        description:
             "Compound's AI dissects abandonment patterns (device, payment errors, shipping hesitations) and triggers hyper-personalized recovery campaigns. Clients see 31% recovery rates by targeting root causes, not generic discounts.",
-        rightTitle: (
+        image: "https://framerusercontent.com/images/92zyjxX9zrrcanJfJjhvN3vz0s.png",
+    },
+    {
+        title: (
             <>
                 Identify hidden VIPs
                 <br />
                 buying 3X more
             </>
         ),
-        rightDescription:
+        description:
             "Real-time scoring detects high-velocity buyers through purchase cadence, social advocacy, and service interactions. Automatically enrolls them in margin-boosting bundles and concierge offers – Proven 22% CLV lift.",
+        image: "https://framerusercontent.com/images/dmzB6UCcpvyJEitigtg6ige3JI.png",
     },
     {
-        leftTitle: (
+        title: (
             <>
-                Maximize customer
+                Liquidate slow-movers
                 <br />
-                lifetime value
+                before they tank margins
             </>
         ),
-        leftDescription:
-            "AI-powered segmentation identifies high-potential customers and recommends personalized retention strategies. Increase repeat purchase rates by 45% with predictive churn modeling and automated win-back campaigns.",
-        rightTitle: (
-            <>
-                Predict next-best
-                <br />
-                offers in real-time
-            </>
-        ),
-        rightDescription:
-            "Dynamic recommendation engine analyzes purchase history, browsing behavior, and seasonal trends to surface the perfect offer at the perfect time – driving 28% higher average order values.",
+        description:
+            "Machine learning predicts dying products using social sentiment decay and competitor shifts, then prescribes liquidation tactics. Users cut write-offs by 19% via flash sales and tax-optimized donations.",
+        image: "https://framerusercontent.com/images/s0zLEuh1iQ7wqUGWC0rABPWJLQ.png",
     },
     {
-        leftTitle: (
-            <>
-                Eliminate deadstock
-                <br />
-                before it happens
-            </>
-        ),
-        leftDescription:
-            "Predictive inventory analytics flag slow-moving SKUs 30 days before they become deadstock. AI suggests markdown strategies, bundle opportunities, and channel reallocation to recover 89% of at-risk inventory value.",
-        rightTitle: (
-            <>
-                Smart liquidation
-                <br />
-                at peak margins
-            </>
-        ),
-        rightDescription:
-            "Automated clearance engine optimizes markdown timing and depth across channels. Machine learning ensures maximum recovery rates while protecting brand perception – averaging 34% higher clearance margins.",
-    },
-    {
-        leftTitle: (
+        title: (
             <>
                 Outprice competitors
                 <br />
                 without sacrificing margins
             </>
         ),
-        leftDescription:
+        description:
             "AI adjusts prices in real-time based on inventory turnover, competitor MAP violations, and customer sensitivity tiers. Clients achieve 14% margin lifts while maintaining brand price integrity.",
-        rightTitle: (
-            <>
-                Dynamic pricing
-                <br />
-                across all channels
-            </>
-        ),
-        rightDescription:
-            "Unified pricing engine ensures consistency across marketplaces, DTC, and wholesale while optimizing for each channel's unique demand curves. Reduce pricing errors by 92% with automated rule enforcement.",
+        image: "https://framerusercontent.com/images/mmDwVojjEFuNSSU4PktWqCiOut8.png",
     },
 ];
 
@@ -127,101 +94,6 @@ const whyChooseData = [
     }
 ];
 
-
-
-const StatisticChart = () => {
-    return (
-        <div className="bg-white rounded-[24px] border border-[#f0f0f0] shadow-[0_2px_12px_rgba(0,0,0,0.02)] p-6 md:p-8 w-full max-w-[500px] h-full flex flex-col">
-            <div className="mb-6">
-                <h4 className="font-[family-name:var(--font-instrument-sans)] text-[18px] font-semibold text-[#1a1a1a] tracking-tight">Statistic</h4>
-                <p className="font-[family-name:var(--font-instrument-sans)] text-[14px] text-[#888]">Income and Expenses</p>
-            </div>
-
-            <div className="flex flex-wrap gap-8 mb-8">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#f5f0ff] flex items-center justify-center shadow-sm">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <rect x="2" y="5" width="20" height="14" rx="2" />
-                            <line x1="2" y1="10" x2="22" y2="10" />
-                        </svg>
-                    </div>
-                    <div>
-                        <p className="font-[family-name:var(--font-instrument-sans)] text-[12px] text-[#888] mb-0.5">Income</p>
-                        <div className="flex items-center gap-2">
-                            <p className="font-[family-name:var(--font-instrument-sans)] text-[20px] font-semibold text-[#1a1a1a]">Expenses</p>
-                            <span className="text-[12px] font-medium text-[#10b981] flex items-center gap-0.5">
-                                10%
-                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                                    <path d="M18 15l-6-6-6 6" />
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#fff5f0] flex items-center justify-center shadow-sm">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <rect x="2" y="5" width="20" height="14" rx="2" />
-                            <line x1="2" y1="10" x2="22" y2="10" />
-                        </svg>
-                    </div>
-                    <div>
-                        <p className="font-[family-name:var(--font-instrument-sans)] text-[12px] text-[#888] mb-0.5">Expenses</p>
-                        <p className="font-[family-name:var(--font-instrument-sans)] text-[20px] font-semibold text-[#1a1a1a]">$18,1...</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex-1 relative mt-2 min-h-[220px]">
-                {/* Y-axis labels */}
-                <div className="absolute left-0 top-0 bottom-6 flex flex-col justify-between text-[11px] text-[#ccc] pr-4">
-                    <span>$1.2k</span>
-                    <span>$1k</span>
-                    <span>$800</span>
-                    <span>$600</span>
-                    <span>$400</span>
-                    <span>$200</span>
-                    <span>0</span>
-                </div>
-
-                <div className="ml-10 h-full flex flex-col justify-between relative pb-6">
-                    {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                        <div key={i} className="w-full border-t border-[#f0f0f0] border-dashed h-0" />
-                    ))}
-
-                    {/* The Chart Lines - simplified curves */}
-                    <svg className="absolute inset-0 w-full h-[calc(100%-24px)] overflow-visible" preserveAspectRatio="none">
-                        {/* Purple line */}
-                        <path
-                            d="M 0 100 C 50 110, 80 60, 120 70 C 160 80, 200 40, 240 60 C 280 80, 320 70, 360 75"
-                            fill="none"
-                            stroke="#8b5cf6"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                        />
-                        {/* Orange line */}
-                        <path
-                            d="M 0 130 C 50 135, 80 120, 120 130 C 160 110, 200 140, 240 120 C 280 130, 320 135, 360 132"
-                            fill="none"
-                            stroke="#f97316"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                        />
-                    </svg>
-                </div>
-
-                {/* X-axis labels */}
-                <div className="ml-10 mt-[-10px] flex justify-between text-[11px] text-[#ccc]">
-                    {["Lbl", "Lbl", "Lbl", "Lbl", "Lbl", "Lbl"].map((l, i) => (
-                        <span key={i}>{l}</span>
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
-};
-
 export default function UseCases() {
     const [activeTab, setActiveTab] = useState(0);
 
@@ -233,93 +105,129 @@ export default function UseCases() {
         setActiveTab((prev) => (prev === tabs.length - 1 ? 0 : prev + 1));
     };
 
-    const content = tabContents[activeTab];
+    const feature = featureCards[activeTab];
 
     return (
         <>
-            <section className="relative flex flex-col w-full max-w-[1168px] px-6 py-20 mx-auto box-border overflow-hidden">
-                {/* Heading */}
-                <div className="mb-4">
-                    <h2 className="font-[family-name:var(--font-instrument-sans)] text-[44px] font-medium tracking-tight leading-[1.1] text-[#323232] text-left block m-0 p-0 box-border">
-                        Unlock{" "}
-                        <span className="font-medium not-italic text-[#108B4E] inline">
-                            hidden profits
-                        </span>{" "}
-                        in your eCommerce data
-                    </h2>
-                </div>
+            <section
+                id="use-cases"
+                className="relative flex flex-col items-center flex-none w-full overflow-hidden pt-[20px] pb-[80px] px-0 box-border"
+                style={{ scrollMarginTop: 44 }}
+            >
+                <div className="w-full max-w-[1168px] px-6 flex flex-col gap-0">
+                    {/* Heading */}
+                    <div className="mb-4">
+                        <h2 className="font-[family-name:var(--font-instrument-sans)] text-[44px] font-medium tracking-tight leading-[1.1] text-[#323232] text-left block m-0 p-0 box-border">
+                            Unlock{" "}
+                            <span className="font-medium not-italic text-[#108B4E] inline">
+                                hidden profits
+                            </span>{" "}
+                            in your eCommerce data
+                        </h2>
+                    </div>
 
-                {/* Subtitle */}
-                <p className="font-[family-name:var(--font-instrument-sans)] text-[20px] font-normal tracking-tight leading-7 text-[#101010] text-left block m-0 p-0 box-border mb-12">
-                    Turn customer insights into revenue-boosting actions with our powerful analytics suite.
-                </p>
+                    {/* Subtitle */}
+                    <p className="font-[family-name:var(--font-instrument-sans)] text-[20px] font-normal tracking-tight leading-7 text-[#101010] text-left block m-0 p-0 box-border mb-12">
+                        Turn customer insights into revenue-boosting actions with our powerful analytics suite.
+                    </p>
 
-                {/* Tab Navigation */}
-                <div className="flex items-center justify-between mb-8">
-                    {/* Tabs */}
-                    <div className="flex items-center gap-1">
-                        {tabs.map((tab, index) => (
+                    {/* Tab Navigation */}
+                    <div className="flex items-center justify-between mb-8">
+                        {/* Tabs */}
+                        <div className="flex items-center gap-1">
+                            {tabs.map((tab, index) => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(index)}
+                                    className={`
+                                        font-[family-name:var(--font-instrument-sans)] text-[16px] font-medium tracking-tight leading-tight
+                                        px-6 py-3 transition-all duration-300 cursor-pointer
+                                        ${activeTab === index
+                                            ? "bg-white text-[#151515] rounded-xl shadow-sm border border-[#efefef]"
+                                            : "text-[#888] hover:text-[#333] bg-transparent border border-transparent"
+                                        }
+                                    `}
+                                >
+                                    {tab}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Arrow Navigation */}
+                        <div className="flex items-center gap-3">
                             <button
-                                key={tab}
-                                onClick={() => setActiveTab(index)}
-                                className={`
-                                    font-[family-name:var(--font-instrument-sans)] text-[16px] font-medium tracking-tight leading-tight
-                                    px-6 py-3 transition-all duration-300 cursor-pointer
-                                    ${activeTab === index
-                                        ? "bg-white text-[#151515] rounded-xl shadow-sm border border-[#efefef]"
-                                        : "text-[#888] hover:text-[#333] bg-transparent border border-transparent"
-                                    }
-                                `}
+                                onClick={handlePrev}
+                                className={`group w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer border border-black bg-transparent hover:bg-black ${activeTab === 0 ? 'opacity-50' : 'opacity-100'}`}
+                                aria-label="Previous tab"
                             >
-                                {tab}
+                                <img src="/leftarrow.svg" alt="" className="w-[20px] h-[20px] transition-all duration-200 group-hover:invert" />
                             </button>
-                        ))}
+                            <button
+                                onClick={handleNext}
+                                className="group w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer border border-black bg-transparent hover:bg-black"
+                                aria-label="Next tab"
+                            >
+                                <img src="/rightarrow.svg" alt="" className="w-[20px] h-[20px] transition-all duration-200 group-hover:invert" />
+                            </button>
+                        </div>
                     </div>
 
-                    {/* Arrow Navigation */}
-                    <div className="flex items-center gap-3">
-                        <button
-                            onClick={handlePrev}
-                            className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#ececeb] transition-colors cursor-pointer bg-[#efefef]"
-                            aria-label="Previous tab"
-                        >
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#151515" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="15 18 9 12 15 6" />
-                            </svg>
-                        </button>
-                        <button
-                            onClick={handleNext}
-                            className="w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#ececeb] transition-colors cursor-pointer bg-[#efefef]"
-                            aria-label="Next tab"
-                        >
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#151515" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="9 18 15 12 9 6" />
-                            </svg>
-                        </button>
-                    </div>
                 </div>
 
-                {/* Main Content Area */}
-                <div className="bg-white rounded-[40px] p-10 md:p-16 lg:p-20 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-[#efefef] flex flex-col lg:flex-row items-center gap-16 min-h-[580px]">
-                    {/* Left Content */}
-                    <div className="flex-1 flex flex-col justify-center gap-8">
-                        <h3 className="font-[family-name:var(--font-instrument-sans)] text-[40px] md:text-[48px] font-medium tracking-tight leading-[1.1] text-[#1a1a1a]">
-                            {content.leftTitle}
-                        </h3>
-                        <p className="font-[family-name:var(--font-instrument-sans)] text-[18px] font-normal tracking-tight leading-relaxed text-[#555] max-w-[500px]">
-                            {content.leftDescription}
-                        </p>
-                    </div>
+                {/* Feature Cards Carousel — breaks out of max-width so the peeking card reaches the right edge */}
+                <div className="overflow-hidden w-full pl-[max(24px,calc((100%-1168px)/2+24px))]">
+                    <div
+                        className="flex gap-6 transition-transform duration-500 ease-in-out"
+                        style={{ transform: `translateX(-${activeTab * 964}px)` }}
+                    >
+                        {featureCards.map((card, index) => (
+                            <div
+                                key={index}
+                                className="relative bg-white rounded-[32px] border border-[#efefef] flex flex-row items-start content-start gap-[40px] overflow-hidden shrink-0 box-border"
+                                style={{ width: '940px', height: '520px', padding: '80px 0px 0px 80px' }}
+                            >
+                                {/* Left Content */}
+                                <div className="relative flex flex-col items-start content-start gap-[24px] h-min overflow-visible p-0 box-border" style={{ flex: '1 0 0px', width: '1px' }}>
+                                    <h3
+                                        className="text-[36px] font-normal tracking-[-0.05em] leading-[1.2em] text-left text-[rgb(50,50,50)] m-0 p-0"
+                                        style={{
+                                            fontFamily: '"Instrument Sans Variable", "Instrument Sans Placeholder", sans-serif',
+                                            fontVariationSettings: '"wdth" 100, "wght" 480',
+                                            textWrap: 'balance',
+                                        }}
+                                    >
+                                        {card.title}
+                                    </h3>
+                                    <p
+                                        className="text-[20px] font-normal tracking-[-0.04em] leading-[1.3em] text-left text-[#101010] m-0 p-0"
+                                        style={{
+                                            fontFamily: '"Instrument Sans Variable", "Instrument Sans Placeholder", sans-serif',
+                                            fontVariationSettings: '"wdth" 100, "wght" 440',
+                                        }}
+                                    >
+                                        {card.description}
+                                    </p>
+                                </div>
 
-                    {/* Right Content - Chart */}
-                    <div className="flex-1 w-full lg:h-[420px] flex items-center justify-center lg:justify-end">
-                        <StatisticChart />
+                                {/* Right Image */}
+                                <div className="flex-1 relative border-l-4 border-t-4 border-[#efefef] rounded-tl-[20px] overflow-hidden self-stretch">
+                                    <div className="absolute inset-0 rounded-[inherit]">
+                                        <img
+                                            src={card.image}
+                                            alt=""
+                                            className="block w-full h-full rounded-[inherit] object-cover box-border"
+                                            style={{ objectPosition: 'left top' }}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* Why Our Customers Love Us Section */}
-            <section className="relative flex flex-col w-full max-w-[1168px] px-6 py-24 mx-auto box-border">
+            <section className="relative flex flex-col w-full max-w-[1168px] px-6 pt-24 pb-8 mx-auto box-border">
                 <div className="mb-16">
                     <h2 className="font-[family-name:var(--font-instrument-sans)] text-[44px] font-medium tracking-[-2.2px] leading-[52.8px] text-[#323232] text-left block w-[1120px] max-w-full m-0 p-0 box-border">
                         Why our customers <span className="font-medium text-[#108B4E]">love us</span>

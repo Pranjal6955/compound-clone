@@ -10,7 +10,20 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Color Palettes */
+  --color-brand-charcoal: #393f40;
+  --color-brand-offwhite: #f4f3f3;
+  --color-brand-slate: #95a8a8;
+  --color-brand-rust: #d05a32;
+  --color-brand-emerald: #34ac79;
+  --color-brand-mist: #c1d1cf;
+  --color-brand-tan: #a3886b;
+  --color-brand-pistachio: #cce19f;
+  --color-brand-rose: #c5a4a8;
+  --color-brand-blush: #dfc5ca;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {

@@ -53,7 +53,7 @@ const comparisonData = {
 
 export default function Features() {
     return (
-        <section className="pt-24 pb-30 px-6 lg:px-0 w-full max-w-[1120px] mx-auto">
+        <section id="features" className="pt-24 pb-30 px-6 lg:px-0 w-full max-w-[1120px] mx-auto">
             <div className="mb-16">
                 <h2 className="font-[family-name:var(--font-instrument-sans)] text-[44px] font-medium tracking-tight leading-tight text-[#323232] text-left mb-4">
                     Product Features
@@ -122,9 +122,9 @@ export default function Features() {
                         <h3 className="font-[family-name:var(--font-instrument-sans)] text-[24px] font-normal tracking-[-1.2px] leading-[26.4px] text-[rgb(16,16,16)] text-left whitespace-pre-wrap max-w-[480px] mb-8">
                             Traditional Analytics Platforms
                         </h3>
-                        <ul className="relative flex flex-col gap-3 w-[480px] h-[396px] overflow-hidden m-0 p-0 box-border">
+                        <ul className="relative flex flex-col flex-none items-center place-content-center gap-4 h-min overflow-hidden p-0 w-full m-0 box-border">
                             {comparisonData.traditional.map((item, i) => (
-                                <li key={i} className="flex items-center gap-4 text-[rgb(16,16,16)] font-[family-name:var(--font-instrument-sans)] text-[18px] font-normal tracking-[-0.72px] leading-[25.2px] whitespace-pre-wrap">
+                                <li key={i} className="flex items-center gap-4 text-gray-700 text-[18px] font-normal tracking-[-0.04em] leading-[1.4em] text-left whitespace-pre-wrap" style={{ fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif' }}>
                                     <div className="w-[20px] h-[20px] rounded-full border border-gray-400 shrink-0" />
                                     <span className="w-[444px]">{item}</span>
                                 </li>
@@ -137,13 +137,11 @@ export default function Features() {
                         <h3 className="font-[family-name:var(--font-instrument-sans)] text-[24px] font-medium text-[rgb(16,16,16)] mb-8">
                             Compound
                         </h3>
-                        <ul className="relative flex flex-col gap-3 w-[480px] h-[396px] overflow-hidden m-0 p-0 box-border">
+                        <ul className="relative flex flex-col flex-none items-center place-content-center gap-4 h-min overflow-hidden p-0 w-full m-0 box-border">
                             {comparisonData.compound.map((item, i) => (
-                                <li key={i} className="flex items-center gap-4 text-[rgb(16,16,16)] font-[family-name:var(--font-instrument-sans)] text-[18px] font-normal tracking-[-0.72px] leading-[25.2px] whitespace-pre-wrap">
-                                    <div className="w-[20px] h-[20px] rounded-full bg-[rgba(31,181,103,0.25)] border border-[#009245]/30 flex items-center justify-center shrink-0">
-                                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#009245" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
+                                <li key={i} className="flex items-center gap-4 text-[#101010] text-[18px] font-normal tracking-[-0.04em] leading-[1.4em] text-left whitespace-pre-wrap" style={{ fontFamily: '"Instrument Sans", "Instrument Sans Placeholder", sans-serif' }}>
+                                    <div className="w-[20px] h-[20px] aspect-square rounded-full bg-[rgba(31,181,103,0.25)] border border-[rgb(31,181,103)] flex flex-none items-center justify-center overflow-hidden p-0 relative box-border shrink-0">
+                                        <img src="/ScreenTick.svg" alt="" className="w-[10px] h-[10px]" />
                                     </div>
                                     <span className="w-[444px]">{item}</span>
                                 </li>

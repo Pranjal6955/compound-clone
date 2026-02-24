@@ -34,14 +34,14 @@ export default function FAQS() {
 
     return (
         <React.Fragment>
-            <section id="faq" className="bg-[rgb(245,245,244)] py-[80px] px-[24px] w-full flex justify-center font-sans relative">
+            <section id="faq" className="bg-[rgb(245,245,244)] pt-[80px] pb-2 px-[24px] w-full flex justify-center font-sans relative">
                 <div className="flex flex-col w-full lg:w-[1120px] max-w-[1120px]">
                     <div className="flex flex-col lg:flex-row w-full lg:h-fit min-h-[357.219px] m-0 p-0 relative gap-[40px] lg:gap-[80px] justify-between">
 
                         {/* Left Side */}
                         <div className="flex flex-col shrink-0 z-10 lg:w-[407px]">
                             <h2
-                                className="text-[44px] font-medium tracking-[-2.2px] leading-[52.8px] text-[rgb(50,50,50)] text-left m-0 p-0 mb-[18px] block w-full whitespace-pre-wrap"
+                                className="text-[44px] font-medium tracking-[-2.2px] leading-[52.8px] text-[rgb(50,50,50)] text-left m-0 p-0 mb-[15px] block w-full whitespace-pre-wrap"
                                 style={{ fontFamily: '"Instrument Sans Variable", "Instrument Sans Placeholder", sans-serif' }}
                             >
                                 FAQs
