@@ -6,7 +6,7 @@ A pixel-perfect clone of the [Compound](https://compound.so) landing page, built
 
 ## 📸 Preview
 
-> Live demo: _coming soon_
+> Live demo: [Demo Video](https://drive.google.com/file/d/1yD1rywM-TPwg4f2ptreq2KipYRCn7TjB/view?usp=sharing)
 
 ---
 
