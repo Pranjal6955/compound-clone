@@ -13,38 +13,38 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="flex flex-col items-center justify-start pt-[40px] px-[24px] h-min relative box-border opacity-100 font-sans text-[12px] w-full bg-[#F5F5F4] antialiased">
-            <div className="max-w-[1360px] w-full mx-auto bg-white rounded-[32px] md:rounded-[40px] p-[32px] md:p-[48px] lg:p-[56px] flex flex-col justify-between min-h-[320px]">
+        <footer className="flex flex-col items-center justify-start pt-[20px] md:pt-[40px] px-6 h-min relative box-border opacity-100 font-sans text-[12px] w-full bg-[#F5F5F4] antialiased">
+            <div className="max-w-[1360px] w-full mx-auto bg-white rounded-[32px] md:rounded-[40px] p-8 md:p-[48px] lg:p-[56px] flex flex-col justify-between min-h-[auto] md:min-h-[320px]">
 
                 {/* Top Row */}
                 <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0">
 
                     {/* Logo & Subtitle */}
                     <div className="flex flex-col">
-                        <Link href="/" className="opacity-100 flex justify-start items-center cursor-pointer flex-row gap-[12px] h-min overflow-hidden p-0 relative no-underline w-min box-border mb-2.5">
-                            <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[10px] bg-[#1AB773] text-white overflow-hidden">
+                        <Link href="/" className="opacity-100 flex justify-start items-center cursor-pointer flex-row gap-[12px] h-min overflow-hidden p-0 relative no-underline w-min box-border mb-3">
+                            <div className="flex h-[36px] w-[36px] md:h-[42px] md:w-[42px] shrink-0 items-center justify-center rounded-[10px] bg-[#1AB773] text-white overflow-hidden">
                                 <Image src="/logo.png" alt="Compound" width={42} height={42} className="object-contain h-full w-full" />
                             </div>
-                            <span className="font-semibold text-[22px] tracking-tight text-[#111827]" style={{ fontFamily: 'var(--font-instrument-sans), sans-serif' }}>
+                            <span className="font-semibold text-[20px] md:text-[22px] tracking-tight text-[#111827]" style={{ fontFamily: 'var(--font-instrument-sans), sans-serif' }}>
                                 Compound
                             </span>
                         </Link>
                         <p className="m-0 p-0">
-                            <em className="text-[#4B5563] text-[16px] font-normal tracking-[-0.2px]" style={{ fontFamily: '"Inter", sans-serif' }}>
+                            <em className="text-[#4B5563] text-[14px] md:text-[16px] font-normal tracking-[-0.2px]" style={{ fontFamily: '"Inter", sans-serif' }}>
                                 AI-powered analytics for eCommerce
                             </em>
                         </p>
                     </div>
 
                     {/* Social Icons */}
-                    <div className="flex flex-wrap items-center gap-1 md:gap-1.5 text-[#111827] mt-2 md:mt-1">
+                    <div className="flex flex-wrap items-center gap-2 md:gap-1.5 text-[#111827] mt-2 md:mt-1">
                         {socials.map((social) => (
                             <a
                                 key={social.name}
                                 href="#"
                                 aria-label={social.name}
                                 style={{ '--hover-color': social.hoverColor } as React.CSSProperties}
-                                className="flex items-center justify-center p-1 rounded-full text-black transition-colors  hover:text-[var(--hover-color)]"
+                                className="flex items-center justify-center p-1 rounded-full text-black transition-colors hover:text-[var(--hover-color)]"
                             >
                                 {social.icon}
                             </a>
@@ -52,12 +52,12 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Big Spacer to separate top and bottom */}
-                <div className="flex-1 min-h-[32px] md:min-h-[48px]" />
+                {/* Spacer */}
+                <div className="flex-1 min-h-[40px] md:min-h-[48px]" />
 
                 {/* Middle Template Info */}
-                <div className="mb-[24px] md:mb-[32px]">
-                    <h6 className="flex items-center gap-2 m-0 p-0 text-black tracking-[-0.72px] font-normal text-[18px] leading-[20.7px]" style={{ fontFamily: 'Recoleta Regular' }}>
+                <div className="mb-8 md:mb-[32px]">
+                    <h6 className="flex items-center gap-2 m-0 p-0 text-black tracking-[-0.72px] font-normal text-[16px] md:text-[18px] leading-tight" style={{ fontFamily: 'Recoleta Regular' }}>
                         Template by
                         <div className="group flex items-center justify-center overflow-hidden rounded-full w-[20px] h-[20px] ring-1 ring-gray-200 bg-[#d05a32] cursor-pointer">
                             <Image src="/footerPerson.png" alt="Firdavs Abdunazarov" width={20} height={20} className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-125" />
@@ -67,12 +67,12 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Row */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0">
-                    <p className="text-[#6B7280] text-[13px] tracking-[-0.2px] font-medium m-0">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0 border-t border-gray-100 pt-8">
+                    <p className="text-[#6B7280] text-[12px] md:text-[13px] tracking-[-0.2px] font-medium m-0">
                         Copyright &copy; Firaworks LLC. All rights reserved
                     </p>
 
-                    <div className="flex items-center gap-6 text-[14px] text-[#4B5563] tracking-[-0.2px] font-medium">
+                    <div className="flex items-center gap-4 md:gap-6 text-[13px] md:text-[14px] text-[#4B5563] tracking-[-0.2px] font-medium">
                         <Link href="#" className="hover:text-black transition-colors">Terms & Conditions</Link>
                         <Link href="#" className="hover:text-black transition-colors">Privacy Policy</Link>
                     </div>

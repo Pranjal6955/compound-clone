@@ -18,7 +18,7 @@ const PricingCard = ({ plan, index }: { plan: any; index: number }) => {
                 scaleX: isAnnual ? -1 : 1,
                 transition: { duration: 1.0, type: "spring", stiffness: 120, damping: 20 }
             }}
-            className="bg-white rounded-[16px] p-[24px] flex flex-col relative w-[352px] h-[498.422px] mx-auto md:mx-0 box-border"
+            className="bg-white rounded-[16px] p-[24px] flex flex-col relative w-full max-w-[352px] h-auto md:min-h-[498.422px] mx-auto md:mx-0 box-border"
             style={{
                 perspective: "1000px",
                 transformStyle: "preserve-3d"
@@ -173,14 +173,14 @@ const Pricing = () => {
     return (
         <section
             id="pricing"
-            className="relative flex flex-col items-center py-[80px] px-[24px] bg-[#f5f5f4] w-full min-h-[822.812px]"
+            className="relative flex flex-col items-center py-12 md:py-[80px] px-6 md:px-[24px] bg-[#f5f5f4] w-full min-h-auto"
         >
             <div className="w-full max-w-[1120px]">
-                <div className="mb-12">
-                    <h2 className="text-[44px] font-medium text-[#323232] leading-[52.8px] tracking-[-2.2px] mb-4 font-[family-name:var(--font-instrument-sans)]">
+                <div className="mb-10 md:mb-12">
+                    <h2 className="text-[32px] md:text-[44px] font-medium text-[#323232] leading-tight md:leading-[52.8px] tracking-[-1.6px] md:tracking-[-2.2px] mb-4 font-[family-name:var(--font-instrument-sans)]">
                         Our Pricing
                     </h2>
-                    <p className="text-[20px] text-[#101010] font-normal leading-[26px] tracking-[-0.8px] font-[family-name:var(--font-instrument-sans)]">
+                    <p className="text-[18px] md:text-[20px] text-[#101010] font-normal leading-relaxed md:leading-[26px] tracking-[-0.6px] md:tracking-[-0.8px] font-[family-name:var(--font-instrument-sans)]">
                         Incredibly powerful, yet simply affordable.
                     </p>
                 </div>

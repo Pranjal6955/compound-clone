@@ -133,17 +133,17 @@ export default function Testimonial() {
     });
 
     return (
-        <section id="reviews" className="relative bg-[#F5F5F4] pt-4 sm:pt-8 pb-8 sm:pb-32 w-full overflow-hidden flex flex-col items-center">
+        <section id="reviews" className="relative bg-[#F5F5F4] pt-8 md:pt-16 pb-12 md:pb-32 w-full overflow-hidden flex flex-col items-center">
             <header className="relative flex flex-col items-center justify-center place-content-center flex-none gap-4 h-min overflow-hidden p-0 w-full box-border mb-4 z-10">
                 <h2
-                    className="text-[44px] font-normal tracking-[-2.2px] leading-[52.8px] text-left text-[rgb(50,50,50)] w-[1112px] h-[52.7969px] m-0 p-0 block static box-border"
+                    className="text-[32px] md:text-[44px] font-normal tracking-[-1.6px] md:tracking-[-2.2px] leading-tight md:leading-[52.8px] text-left text-[rgb(50,50,50)] w-full max-w-[1112px] px-6 h-auto m-0 p-0 block static box-border"
                     style={{ fontFamily: '"Instrument Sans Variable", "Instrument Sans Placeholder", sans-serif' }}
                 >
                     Customer Testimonials
                 </h2>
 
                 <p
-                    className="text-[20px] font-medium tracking-[-0.8px] leading-[26px] text-left text-[rgb(16,16,16)] w-[1112px] h-[26px] m-0 p-0 block static "
+                    className="text-[16px] sm:text-[20px] font-medium tracking-[-0.8px] leading-[1.4] sm:leading-[26px] text-left text-[rgb(16,16,16)] w-full max-w-[1112px] px-6 h-auto m-0 p-0 block static "
                     style={{ fontFamily: '"Instrument Sans Variable", "Instrument Sans Placeholder", sans-serif' }}
                 >
                     See what our customers say about our product.

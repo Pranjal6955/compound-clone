@@ -36,37 +36,37 @@ export default function Hero() {
             return "absolute left-1/2 top-0 h-full w-full -translate-x-1/2 z-30 shadow-[0_20px_40px_rgba(0,0,0,0.1)] opacity-100";
         } else if (index === (frontIndex + 1) % 3) {
             // Middle
-            return "absolute left-1/2 top-[-32px] h-full w-[95%] -translate-x-1/2 z-20 shadow-[0_10px_20px_rgba(0,0,0,0.05)] opacity-100";
+            return "absolute left-1/2 top-[-16px] md:top-[-32px] h-full w-[95%] -translate-x-1/2 z-20 shadow-[0_10px_20px_rgba(0,0,0,0.05)] opacity-100";
         } else {
             // Back
-            return "absolute left-1/2 top-[-64px] h-full w-[90%] -translate-x-1/2 z-10 shadow-sm opacity-100";
+            return "absolute left-1/2 top-[-32px] md:top-[-64px] h-full w-[90%] -translate-x-1/2 z-10 shadow-sm opacity-100";
         }
     };
 
     return (
-        <div className="w-full px-4 sm:px-6 lg:px-8 pt-10 pb-12">
-            <div className="relative inset-0 mx-auto flex h-auto w-full max-w-[1320px] flex-col items-center rounded-[32px] bg-[#FFFFFF] pt-[100px] px-[20px] pb-0 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-[#E5E5E5] overflow-hidden">
+        <div className="w-full px-4 sm:px-6 lg:px-8 pt-10 pb-12 overflow-hidden md:overflow-visible">
+            <div className="relative inset-0 mx-auto flex h-auto w-full max-w-[1320px] flex-col items-center rounded-[24px] md:rounded-[32px] bg-[#FFFFFF] pt-[60px] md:pt-[100px] px-[16px] md:px-[20px] pb-0 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-[#E5E5E5] overflow-hidden">
 
                 {/* Text Content */}
-                <div className="mx-auto text-center w-full max-w-[690px]">
-                    <h1 className="mx-auto block h-auto md:h-[104px] w-full max-w-[690px] text-[44px] md:text-[52px] font-medium leading-[1.1] md:leading-[52px] tracking-[-2.6px] text-[#151515] font-[family-name:var(--font-instrument-sans)] text-center">
+                <div className="mx-auto text-center w-full max-w-[690px] px-4 md:px-0">
+                    <h1 className="mx-auto block h-auto md:h-[104px] w-full max-w-[690px] text-[36px] md:text-[52px] font-medium leading-[1.1] md:leading-[52px] tracking-[-1px] md:tracking-[-2.6px] text-[#151515] font-[family-name:var(--font-instrument-sans)] text-center">
                         Compound is the AI-powered<br className="hidden md:block" /> analytics for eCommerce
                     </h1>
-                    <p className="mx-auto mt-5 block h-auto md:h-[52px] w-full max-w-[490px] text-center text-[20px] font-normal leading-[26px] tracking-[-0.8px] text-[#101010] font-[family-name:var(--font-instrument-sans)]">
+                    <p className="mx-auto mt-4 md:mt-5 block h-auto md:h-[52px] w-full max-w-[490px] text-center text-[16px] md:text-[20px] font-normal leading-[1.4] md:leading-[26px] tracking-[-0.4px] md:tracking-[-0.8px] text-[#101010] font-[family-name:var(--font-instrument-sans)]">
                         Compound identifies hidden revenue opportunities in<br className="hidden md:block" /> your customer data – from abandoned carts to VIP buyers.
                     </p>
                 </div>
 
                 {/* Action Buttons */}
                 {/* Secondary wrap displaying primary call-to-action buttons (Get started / See Pricing) with complex inset shadows */}
-                <div className="relative mt-8 mb-10 flex h-[40px] w-[250.422px] flex-row items-center justify-center gap-[15px] m-0 p-0 mx-auto">
-                    <button className="flex h-full w-[117.5px] items-center justify-center rounded-[12px] bg-[#14A15A] text-[16px] font-normal leading-[17.6px] tracking-[-0.64px] text-white transition-colors hover:bg-[#1CCB73] font-[family-name:var(--font-instrument-sans)]"
+                <div className="relative mt-6 md:mt-8 mb-8 md:mb-10 flex h-auto md:h-[40px] flex-row items-center justify-center gap-[10px] md:gap-[15px] m-0 p-0 mx-auto">
+                    <button className="flex h-[40px] w-auto px-4 md:px-0 md:w-[117.5px] items-center justify-center rounded-[12px] bg-[#14A15A] text-[15px] md:text-[16px] font-normal leading-[17.6px] tracking-[-0.64px] text-white transition-colors hover:bg-[#1CCB73] font-[family-name:var(--font-instrument-sans)]"
                         style={{
                             boxShadow: "rgba(0, 0, 0, 0.08) 0px -0.796192px 1.43315px -0.75px inset, rgba(0, 0, 0, 0.07) 0px -2.41451px 4.34611px -1.5px inset, rgba(0, 0, 0, 0.06) 0px -6.38265px 11.4888px -2.25px inset, rgba(0, 0, 0, 0.04) 0px -20px 36px -3px inset"
                         }}>
                         Get started
                     </button>
-                    <button className="flex h-[40px] w-[116.875px] items-center justify-center rounded-[12px] bg-[#FFFFFF] px-[20px] text-[16px] font-normal leading-[17.6px] tracking-[-0.64px] text-[#1A1A1A] transition-colors hover:bg-gray-50 font-[family-name:var(--font-instrument-sans)]"
+                    <button className="flex h-[40px] w-auto px-4 md:px-[20px] md:w-[116.875px] items-center justify-center rounded-[12px] bg-[#FFFFFF] text-[15px] md:text-[16px] font-normal leading-[17.6px] tracking-[-0.64px] text-[#1A1A1A] transition-colors hover:bg-gray-50 font-[family-name:var(--font-instrument-sans)]"
                         style={{
                             boxShadow: "rgba(0, 0, 0, 0.15) 0px -0.796192px 1.43315px -0.75px inset, rgba(0, 0, 0, 0.145) 0px -2.41451px 4.34611px -1.5px inset, rgba(0, 0, 0, 0.133) 0px -6.38265px 11.4888px -2.25px inset, rgba(0, 0, 0, 0.1) 0px -20px 36px -3px inset"
                         }}>
@@ -75,7 +75,7 @@ export default function Hero() {
                 </div>
 
                 {/* Dashboard Mockup Showcase */}
-                <div className="relative mt-20 -mb-[100px] flex h-[756px] w-full max-w-[1200px] flex-col cursor-pointer justify-end">
+                <div className="relative mt-10 md:mt-20 -mb-[40px] sm:-mb-[60px] md:-mb-[100px] flex h-[250px] sm:h-[400px] md:h-[600px] lg:h-[756px] w-full max-w-[1200px] flex-col cursor-pointer justify-end">
                     {/* Ambient Shadow glow */}
                     <div className="absolute top-0 left-1/2 -z-10 h-full w-4/5 -translate-x-1/2 bg-gray-200/50 blur-[100px]" />
 
@@ -83,16 +83,16 @@ export default function Hero() {
                         <div
                             key={src}
                             onClick={() => setFrontIndex(index)}
-                            className={`flex flex-col justify-center items-center rounded-[20px] border border-gray-200 bg-white p-[10px] transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-1 ${getLayerClasses(index)}`}
+                            className={`flex flex-col justify-center items-center rounded-[12px] sm:rounded-[20px] border border-gray-200 bg-white p-[6px] sm:p-[10px] transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-1 ${getLayerClasses(index)}`}
                         >
-                            <img src={src} alt={`Dashboard Layer ${index + 1}`} className="h-full w-full rounded-[10px] ring-1 ring-black/10 object-cover object-top shadow-sm" />
+                            <img src={src} alt={`Dashboard Layer ${index + 1}`} className="h-full w-full rounded-[6px] sm:rounded-[10px] ring-1 ring-black/10 object-cover object-top shadow-sm" />
                         </div>
                     ))}
 
                     {/* Tab Navigation Menu */}
                     {/* A frosted glass (glassmorphism) navigation bar mapping tab selections to their corresponding dashboard view slices */}
                     <div
-                        className={`absolute bottom-[104px] left-1/2 -translate-x-1/2 z-40 flex flex-row items-center place-content-center h-min w-min gap-[8px] p-[8px] rounded-[16px] opacity-100 overflow-visible transition-all duration-500`}
+                        className={`absolute bottom-[16px] sm:bottom-[32px] md:bottom-[64px] lg:bottom-[104px] left-1/2 -translate-x-1/2 z-40 flex flex-row items-center place-content-center h-min w-min gap-[4px] sm:gap-[8px] p-[6px] sm:p-[8px] rounded-[16px] opacity-100 overflow-visible transition-all duration-500`}
                         style={{
                             backgroundColor: "rgba(153, 153, 153, 0.6)",
                             boxShadow: "rgba(0, 0, 0, 0.157) 0.301094px 0.301094px 1.78841px -1.08333px, rgba(0, 0, 0, 0.145) 1.14427px 1.14427px 6.7966px -2.16667px, rgba(0, 0, 0, 0.086) 5px 5px 29.6985px -3.25px",
@@ -102,29 +102,29 @@ export default function Hero() {
                     >
                         <button
                             onClick={() => setFrontIndex(0)}
-                            className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 0 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
-                            <img src="/sales.svg" alt="Sales" className="h-[14px] w-[14px] transition-all" style={frontIndex === 0 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
-                            <span className="block h-[20.7969px] whitespace-pre text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Sales</span>
+                            className={`flex h-auto md:h-[36.7969px] w-auto md:w-[79.25px] items-center justify-center gap-[4px] md:gap-[6px] rounded-[8px] py-[6px] md:py-[8px] px-[8px] md:pl-[6px] md:pr-[12px] text-[14px] md:text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 0 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                            <img src="/sales.svg" alt="Sales" className="h-[12px] w-[12px] md:h-[14px] md:w-[14px] transition-all" style={frontIndex === 0 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
+                            <span className="block h-[20.7969px] whitespace-pre text-[14px] md:text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Sales</span>
                         </button>
                         <button
                             onClick={() => setFrontIndex(1)}
-                            className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 1 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
-                            <img src="/chrum.svg" alt="Churn" className="h-[14px] w-[14px] transition-all" style={frontIndex === 1 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
-                            <span className="block h-[20.7969px] whitespace-pre text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Churn</span>
+                            className={`flex h-auto md:h-[36.7969px] w-auto md:w-[79.25px] items-center justify-center gap-[4px] md:gap-[6px] rounded-[8px] py-[6px] md:py-[8px] px-[8px] md:pl-[6px] md:pr-[12px] text-[14px] md:text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 1 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                            <img src="/chrum.svg" alt="Churn" className="h-[12px] w-[12px] md:h-[14px] md:w-[14px] transition-all" style={frontIndex === 1 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
+                            <span className="block h-[20.7969px] whitespace-pre text-[14px] md:text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Churn</span>
                         </button>
                         <button
                             onClick={() => setFrontIndex(2)}
-                            className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 2 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
-                            <img src="/views.svg" alt="Views" className="h-[14px] w-[14px] transition-all" style={frontIndex === 2 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
-                            <span className="block h-[20.7969px] whitespace-pre text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Views</span>
+                            className={`flex h-auto md:h-[36.7969px] w-auto md:w-[79.25px] items-center justify-center gap-[4px] md:gap-[6px] rounded-[8px] py-[6px] md:py-[8px] px-[8px] md:pl-[6px] md:pr-[12px] text-[14px] md:text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 2 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                            <img src="/views.svg" alt="Views" className="h-[12px] w-[12px] md:h-[14px] md:w-[14px] transition-all" style={frontIndex === 2 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
+                            <span className="block h-[20.7969px] whitespace-pre text-[14px] md:text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Views</span>
                         </button>
                     </div>
                 </div>
             </div>
 
             {/* Testimonial Section */}
-            <div className="mx-auto mt-20 flex h-[246px] w-full max-w-[1120px] flex-col items-start justify-center px-[100px] font-[family-name:var(--font-instrument-sans)]">
-                <blockquote ref={testimonialRef} className="text-[40px] font-medium italic leading-[52px] tracking-[-2px]">
+            <div className="mx-auto mt-16 md:mt-20 flex h-auto md:h-[246px] w-full max-w-[1120px] flex-col items-start justify-center px-6 md:px-[50px] lg:px-[100px] py-10 md:py-0 font-[family-name:var(--font-instrument-sans)]">
+                <blockquote ref={testimonialRef} className="text-[24px] sm:text-[32px] md:text-[40px] font-medium italic leading-[32px] sm:leading-[40px] md:leading-[52px] tracking-[-1px] md:tracking-[-2px]">
                     {[
                         "\"Compound's AI uncovered $2.8M in hidden annual",
                         "revenue we'd been missing - their predictive",
@@ -155,7 +155,7 @@ export default function Hero() {
                         );
                     })}
                 </blockquote>
-                <div className="mt-[20px] font-[family-name:var(--font-instrument-sans)] text-[20px] font-normal tracking-[-0.16px] leading-[24px] text-[rgb(21,21,21)] text-left">
+                <div className="mt-[20px] font-[family-name:var(--font-instrument-sans)] text-[16px] md:text-[20px] font-normal tracking-[-0.16px] leading-[24px] text-[rgb(21,21,21)] text-left">
                     <span className="font-normal">Jamie Rivera</span>, CEO of Luxe Threads
                 </div>
             </div>
