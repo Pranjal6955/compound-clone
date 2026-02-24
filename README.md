@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Compound Clone
 
-## Getting Started
+A pixel-perfect clone of the [Compound](https://compound.so) landing page, built with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS 4**, and **Framer Motion**.
 
-First, run the development server:
+---
+
+## 📸 Preview
+
+> Live demo: _coming soon_
+
+---
+
+## ✨ Features
+
+- **Responsive Design** — Fully responsive layout optimized for desktop, tablet, and mobile viewports.
+- **Smooth Animations** — Scroll-based and interaction-driven animations powered by Framer Motion.
+- **Pixel-Perfect UI** — Carefully crafted components that closely replicate the original Compound design.
+- **Modern Stack** — Built on Next.js 16 App Router, React 19, and Tailwind CSS 4 for a cutting-edge developer experience.
+
+---
+
+## 🧩 Components
+
+| Component        | Description                                                      |
+| ---------------- | ---------------------------------------------------------------- |
+| `Navbar`         | Top navigation bar with logo and menu links                      |
+| `Hero`           | Hero section with headline, subtext, and CTA                     |
+| `Features`       | Feature cards showcasing key product capabilities                |
+| `UseCases`       | Tabbed use-case section with detailed statistics and visuals     |
+| `Pricing`        | Monthly / Annual pricing toggle with 3D flip card animation      |
+| `Testimonial`    | Customer testimonial carousel with tilted cards and fade edges   |
+| `CTA`            | Call-to-action banner with embedded video                        |
+| `FAQS`           | Accordion-style FAQ section with video background                |
+| `Footer`         | Footer with links, social icons, and attribution                 |
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology       | Version  |
+| ---------------- | -------- |
+| Next.js          | 16.1.6   |
+| React            | 19.2.3   |
+| TypeScript       | 5.x      |
+| Tailwind CSS     | 4.x      |
+| Framer Motion    | 12.x     |
+| Lucide React     | 0.575.x  |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js** ≥ 18
+- **npm**, **yarn**, **pnpm**, or **bun**
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Pranjal6955/compound-clone.git
+cd compound-clone
+
+# Install dependencies
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+### Lint
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+compound-clone/
+├── app/
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── Features.tsx
+│   ├── useCases.tsx
+│   ├── Pricing.tsx
+│   ├── Testimonial.tsx
+│   ├── CTA.tsx
+│   ├── FAQS.tsx
+│   └── Footer.tsx
+├── public/                # Static assets (images, SVGs, videos)
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+└── README.md
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+This project is for educational / assignment purposes only. All design credit goes to [Compound](https://compound.so).
