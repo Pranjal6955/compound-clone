@@ -24,7 +24,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Compound — AI-Powered eCommerce Analytics",
+  title: "Compound-AI-Powered eCommerce Analytics",
   description: "Turn customer insights into revenue-boosting actions. Compound's AI-powered analytics suite helps eCommerce brands unlock hidden profits, optimize pricing, and maximize customer lifetime value.",
   icons: {
     icon: "/logo.png",

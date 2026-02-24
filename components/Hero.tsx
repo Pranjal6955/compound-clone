@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { TrendingUp, TrendingDown, BarChart3 } from "lucide-react";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const Word = ({ children, progress, range }: { children: React.ReactNode, progress: any, range: [number, number] }) => {
@@ -88,50 +88,37 @@ export default function Hero() {
                             <img src={src} alt={`Dashboard Layer ${index + 1}`} className="h-full w-full rounded-[10px] ring-1 ring-black/10 object-cover object-top shadow-sm" />
                         </div>
                     ))}
-                </div>
 
-                {/* Tab Navigation Menu */}
-                {/* A frosted glass (glassmorphism) navigation bar mapping tab selections to their corresponding dashboard view slices */}
-                <div
-                    className={`absolute bottom-[5px] left-1/2 -translate-x-1/2 z-50 flex h-[52.7969px] w-[255.344px] items-center gap-[6px] p-[8px] transition-all duration-500 rounded-[16px] opacity-100 scale-100`}
-                    style={{
-                        backgroundColor: "rgba(153, 153, 153, 0.6)",
-                        boxShadow: "rgba(0, 0, 0, 0.157) 0.301094px 0.301094px 1.78841px -1.08333px, rgba(0, 0, 0, 0.145) 1.14427px 1.14427px 6.7966px -2.16667px, rgba(0, 0, 0, 0.086) 5px 5px 29.6985px -3.25px",
-                        backdropFilter: "blur(12px)",
-                        WebkitBackdropFilter: "blur(12px)",
-                    }}
-                >
-                    <button
-                        onClick={() => setFrontIndex(0)}
-                        className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 0 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
-                        <TrendingUp className={`h-[14px] w-[14px] transition-colors ${frontIndex === 0 ? 'text-[#108B4E]' : 'text-[#666666]'}`} />
-                        Sales
-                    </button>
-                    <button
-                        onClick={() => setFrontIndex(1)}
-                        className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 1 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
-                        <TrendingDown className={`h-[14px] w-[14px] transition-colors ${frontIndex === 1 ? 'text-[#108B4E]' : 'text-[#666666]'}`} />
-                        Churn
-                    </button>
-                    <button
-                        onClick={() => setFrontIndex(2)}
-                        className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 2 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
-                        {/* Custom hand-coded SVG recreating the 'Views' bar-chart icon with thick rounded caps */}
-                        <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className={`transition-colors ${frontIndex === 2 ? 'text-[#108B4E]' : 'text-[#666666]'}`}
-                            style={{ display: 'inline', verticalAlign: 'baseline', overflow: 'visible', backgroundColor: 'transparent' }}
-                        >
-                            <rect x="1" y="8" width="3" height="5" rx="1.5" />
-                            <rect x="5.5" y="4" width="3" height="9" rx="1.5" />
-                            <rect x="10" y="0" width="3" height="13" rx="1.5" />
-                        </svg>
-                        Views
-                    </button>
+                    {/* Tab Navigation Menu */}
+                    {/* A frosted glass (glassmorphism) navigation bar mapping tab selections to their corresponding dashboard view slices */}
+                    <div
+                        className={`absolute bottom-[104px] left-1/2 -translate-x-1/2 z-40 flex flex-row items-center place-content-center h-min w-min gap-[8px] p-[8px] rounded-[16px] opacity-100 overflow-visible transition-all duration-500`}
+                        style={{
+                            backgroundColor: "rgba(153, 153, 153, 0.6)",
+                            boxShadow: "rgba(0, 0, 0, 0.157) 0.301094px 0.301094px 1.78841px -1.08333px, rgba(0, 0, 0, 0.145) 1.14427px 1.14427px 6.7966px -2.16667px, rgba(0, 0, 0, 0.086) 5px 5px 29.6985px -3.25px",
+                            backdropFilter: "blur(10px)",
+                            WebkitBackdropFilter: "blur(10px)",
+                        }}
+                    >
+                        <button
+                            onClick={() => setFrontIndex(0)}
+                            className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 0 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                            <img src="/sales.svg" alt="Sales" className="h-[14px] w-[14px] transition-all" style={frontIndex === 0 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
+                            <span className="block h-[20.7969px] whitespace-pre text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Sales</span>
+                        </button>
+                        <button
+                            onClick={() => setFrontIndex(1)}
+                            className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 1 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                            <img src="/chrum.svg" alt="Churn" className="h-[14px] w-[14px] transition-all" style={frontIndex === 1 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
+                            <span className="block h-[20.7969px] whitespace-pre text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Churn</span>
+                        </button>
+                        <button
+                            onClick={() => setFrontIndex(2)}
+                            className={`flex h-[36.7969px] w-[79.25px] items-center justify-center gap-[6px] rounded-[8px] py-[8px] pl-[6px] pr-[12px] text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] transition-all ${frontIndex === 2 ? 'bg-white shadow-sm hover:bg-gray-50' : 'bg-[#F5F5F4] hover:bg-white/50'}`}>
+                            <img src="/views.svg" alt="Views" className="h-[14px] w-[14px] transition-all" style={frontIndex === 2 ? { filter: 'brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(436%) hue-rotate(103deg) brightness(95%) contrast(92%)' } : {}} />
+                            <span className="block h-[20.7969px] whitespace-pre text-[16px] font-normal leading-[20.8px] tracking-[-0.64px] text-[#151515] font-[family-name:var(--font-instrument-sans)] cursor-pointer overflow-visible">Views</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -169,7 +156,7 @@ export default function Hero() {
                     })}
                 </blockquote>
                 <div className="mt-[20px] font-[family-name:var(--font-instrument-sans)] text-[20px] font-normal tracking-[-0.16px] leading-[24px] text-[rgb(21,21,21)] text-left">
-                    <span className="font-semibold">Jamie Rivera</span>, CEO of Luxe Threads
+                    <span className="font-normal">Jamie Rivera</span>, CEO of Luxe Threads
                 </div>
             </div>
         </div>
